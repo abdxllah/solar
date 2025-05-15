@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Abdullah's Portfolio</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: black;
+        font-family: 'IBM Plex Mono', monospace;
+        color: white;
+      }
+
+      canvas {
+        display: block;
+      }
+
+      #info-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  max-width: 90vw;
+  max-height: 70vh;        /* limit height to 70% of viewport */
+  padding: 30px;
+  background: rgba(20, 20, 30, 0.95);
+  border: 1px solid #999;
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
+  box-shadow: 0 0 30px #fff3;
+
+  overflow-y: auto;        /* enable vertical scrolling */
+  scrollbar-width: thin;   /* Firefox */
+  scrollbar-color: #555 #2a2a38; /* thumb and track colors */
+}
+
+/* WebKit-based browsers */
+#info-popup::-webkit-scrollbar {
+  width: 8px;
+}
+
+#info-popup::-webkit-scrollbar-track {
+  background: rgba(20, 20, 30, 0.95);
+}
+
+#info-popup::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+  border: 2px solid rgba(20, 20, 30, 0.95);
+}
+
+      #info-popup h2 {
+        margin-top: 0;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      #info-popup p {
+        line-height: 1.5;
+        color: #ccc;
+      }
+
+      #info-popup button {
+        margin-top: 20px;
+        background: none;
+        border: 1px solid #888;
+        color: #ccc;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      /* Question Mark Circle - Bottom Right */
+      #question-mark-circle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: black;
+        cursor: pointer;
+        font-family: 'IBM Plex Mono', monospace;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info-popup">
+      <h2>Planet Info</h2>
+      <div id="popup-content">
+        <img id="popup-image" src="" alt="Planet Image" style="display:none; max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 8px;" />
+        <p>This is where your project description will go.</p>
+      </div>
+      <div id="popup-buttons" style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 15px;">
+        <button id="download-cv-btn" style="display:none;">Download CV</button>
+        <button id="close-popup-btn">Close</button>
+      </div>
+    </div>
+    
+    <!-- Question Mark Circle -->
+    <div id="question-mark-circle">?</div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
