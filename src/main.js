@@ -1,4 +1,3 @@
-// Import dependencies
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
@@ -82,7 +81,7 @@ planetData.forEach((data, i) => {
     new THREE.MeshStandardMaterial({ map: texture, roughness: 1, metalness: 0 })
   );
 
-  // Subtle Glow
+  // glow
   const glowMaterial = new THREE.MeshBasicMaterial({
     color: data.glowColor,
     transparent: true,
@@ -96,7 +95,7 @@ planetData.forEach((data, i) => {
   );
   mesh.add(glowMesh);
 
-  // Planet-specific effects
+  // effects for planets
   switch (data.name) {
     case 'Earth': {
       const cloudGeo = new THREE.SphereGeometry(data.size * 1.01, 32, 32);
@@ -172,7 +171,7 @@ planetData.forEach((data, i) => {
     }
   }
 
-  // --- ADD ORBIT TRAIL ---
+  //orbit trail
   const segments = 128;
   const orbitGeometry = new THREE.BufferGeometry();
   const positionsOrbit = new Float32Array(segments * 3);
@@ -186,17 +185,15 @@ planetData.forEach((data, i) => {
   const orbitMaterial = new THREE.LineBasicMaterial({ color: 0xaaaaaa, transparent: true, opacity: 0.3 });
   const orbitLine = new THREE.LineLoop(orbitGeometry, orbitMaterial);
   scene.add(orbitLine);
-  // --- END ORBIT TRAIL ---
 
   mesh.userData = data;
   scene.add(mesh);
   planets.push({ mesh, angle: Math.random() * Math.PI * 2 });
 });
 
-// Calculate farthest planet distance to set min star distance accordingly
 const farthestDistance = Math.max(...planetData.map(p => p.distance));
 
-// Stars setup
+// stars setup
 const starCount = 3000;
 const positions = new Float32Array(starCount * 3);
 const colorsStar = new Float32Array(starCount * 3);
@@ -217,7 +214,7 @@ function getSubtleWhiteTint() {
 }
 
 const radius = 300;
-const minRadius = farthestDistance + 5; // Ensure stars are outside the farthest planet orbit
+const minRadius = farthestDistance + 5; 
 
 for (let i = 0; i < starCount; i++) {
   const i3 = i * 3;
@@ -271,16 +268,14 @@ closePopupBtn.onclick = () => {
 };
 
 downloadCvBtn.onclick = () => {
-  // Replace '/path/to/your-cv.pdf' with your actual CV pdf file URL/path
   const link = document.createElement('a');
-  link.href = '/ResumeAbdullahRafiq.pdf';  // <-- put your CV file URL here
+  link.href = '/ResumeAbdullahRafiq.pdf';  
   link.download = 'AbdullahRafiqCV.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
 
-// Update your existing click event handler code to something like this:
 window.addEventListener('click', event => {
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -307,7 +302,7 @@ window.addEventListener('click', event => {
       case 'The Sun':
         title = 'Abdullah Rafiq';
         description = 'I’m a space engineer, computer scientist, and musician driven by the desire to make a meaningful difference. My passion lies in using technology and creativity to improve lives, whether that’s through designing accessible tools for space missions, developing mental health platforms, or creating projects that support and uplift communities. With a foundation in both deep space systems and software engineering, I thrive at the intersection of logic and empathy, precision and imagination. Everything I build, whether it’s a predictive model for solar activity or a custom programming language for space engineers, is rooted in purpose: to help others, inspire change, and push boundaries.';
-        showDownloadBtn = true;  // Show CV download button
+        showDownloadBtn = true;  
         break;
       case 'Mercury':
         title = 'Happy Bucket';
@@ -382,7 +377,7 @@ function animate() {
     const d = p.mesh.userData.distance;
     p.mesh.position.set(Math.cos(p.angle) * d, 0, Math.sin(p.angle) * d);
 
-    // Rotate planet on its axis
+    
     p.mesh.rotation.y += p.mesh.userData.rotationSpeed || 0.01;
 
     if (p.mesh.userData.cloudMesh) {
@@ -391,7 +386,7 @@ function animate() {
   });
 
   const pos = starGeo.attributes.position.array;
-  const minDistance = minRadius; // same as minRadius for stars
+  const minDistance = minRadius; 
   for (let i = 0; i < pos.length; i += 3) {
     pos[i] += velocities[i];
     pos[i + 1] += velocities[i + 1];
@@ -415,15 +410,15 @@ function animate() {
 
 document.getElementById('question-mark-circle').addEventListener('click', () => {
   popup.querySelector('h2').innerText = 'Welcome Traveller!';
-  popup.querySelector('p').innerText = 'My name is Abdullah and welcome to my personal Solar System I made quickly using three.js to show off some of my personal projects. Drag to look around using the mouse and click on the the star in the centre to learn about me or the planets to see my projects!\n \n WARNING - This is not a replica of our Solar Sytem and breaks many laws of physics!';
-  popupImage.style.display = 'none';      // hide image
-  downloadCvBtn.style.display = 'none';   // hide CV button
+  popup.querySelector('p').innerText = 'My name is Abdullah and welcome to my personal Solar System I made quickly using three.js to show off some of my personal projects. Drag to look around using the mouse and click on the the star in the centre to learn about me or the planets to see my projects!\n \n WARNING - This is not a replica of our Solar System and breaks many laws of physics!';
+  popupImage.style.display = 'none';      
+  downloadCvBtn.style.display = 'none';  
   popup.style.display = 'block';
 });
 
 
 popup.querySelector('h2').innerText = 'Welcome Traveller!';
-  popup.querySelector('p').innerText = 'My name is Abdullah and welcome to my personal Solar System I made quickly using three.js to show off some of my personal projects. Drag to look around using the mouse and click on the the star in the centre to learn about me or the planets to see my projects! \n \nWARNING - This is not a replica of our Solar Sytem and breaks many laws of physics!';
+  popup.querySelector('p').innerText = 'My name is Abdullah and welcome to my personal Solar System I made quickly using three.js to show off some of my personal projects. Drag to look around using the mouse and click on the the star in the centre to learn about me or the planets to see my projects! \n \nWARNING - This is not a replica of our Solar System and breaks many laws of physics!';
   popup.style.display = 'block';
 
 animate();
