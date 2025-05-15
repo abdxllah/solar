@@ -317,7 +317,7 @@ window.addEventListener('click', event => {
       case 'Venus':
         title = 'Warrior - An Exploration of AI in narrative-driven games';
         description = 'In this project, I investigated how to push the boundaries of AI use in storytelling by creating a dynamic narrative experience fully determined by user interactions. Using C# and Python, I implemented a ‘bag of beats’ structure to craft an engaging and continuously evolving story that reacts to how the player behaves. This work allowed me to combine programming skills with creative storytelling, exploring new ways to deliver personalized and immersive gaming experiences.';
-        imageUrl = 'two.jpg';
+        imageUrl = 'warrior.png';
         break;
       case 'Earth':
         title = 'Predicting F10.7';
@@ -337,12 +337,12 @@ window.addEventListener('click', event => {
       case 'Saturn':
         title = 'Trajectory Data Converter';
         description = 'In this project, I developed tooling to streamline and automate the transformation of spacecraft ephemeris data into SPICE-compatible formats using C. By parsing trajectory data files files and programmatically generating setup files and SPK kernels, the system preserves flexibility in interpolation methods and frame references. The solution integrates time conversion, frame transformation, and state vector handling, enabling precise and adaptable trajectory generation for simulation or mission analysis workflows. This work allowed me to merge low-level systems programming with aerospace data standards, optimising pipeline efficiency for space mission support.';
-        imageUrl = 'six.png';
+        imageUrl = 'trajectory.png';
         break;
       case 'Uranus':
         title = 'Galax-C';
         description = 'I am developing Galax-C, a programming language based on C that incorporates built-in functions tailored specifically for space engineering calculations. The language is designed with simple syntax to streamline complex operations, making it more accessible and efficient for space engineers. This project reflects my drive to create practical tools that enable professionals in the space industry to prototype and test concepts quickly without relying on proprietary software or complicated mathematical tools.';
-        imageUrl = 'seven.png';
+        imageUrl = 'c.png';
         break;
     }
 
