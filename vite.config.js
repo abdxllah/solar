@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://github.com/abdxllah/solar', // <-- your GitHub repo name here, with slashes
+  plugins: [react()],
+  base: '/solar/', // Replace 'solar' with your repository name
 });
