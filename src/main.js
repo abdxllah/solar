@@ -273,7 +273,7 @@ closePopupBtn.onclick = () => {
 downloadCvBtn.onclick = () => {
   // Replace '/path/to/your-cv.pdf' with your actual CV pdf file URL/path
   const link = document.createElement('a');
-  link.href = 'ResumeAbdullahRafiq.pdf';  // <-- put your CV file URL here
+  link.href = '/ResumeAbdullahRafiq.pdf';  // <-- put your CV file URL here
   link.download = 'AbdullahRafiqCV.pdf';
   document.body.appendChild(link);
   link.click();
@@ -306,7 +306,7 @@ window.addEventListener('click', event => {
     switch (title) {
       case 'The Sun':
         title = 'Abdullah Rafiq';
-        description = 'The bright heart of our Solar System.';
+        description = 'I’m a space engineer, computer scientist, and musician driven by the desire to make a meaningful difference. My passion lies in using technology and creativity to improve lives, whether that’s through designing accessible tools for space missions, developing mental health platforms, or creating projects that support and uplift communities. With a foundation in both deep space systems and software engineering, I thrive at the intersection of logic and empathy, precision and imagination. Everything I build, whether it’s a predictive model for solar activity or a custom programming language for space engineers, is rooted in purpose: to help others, inspire change, and push boundaries.';
         showDownloadBtn = true;  // Show CV download button
         break;
       case 'Mercury':
