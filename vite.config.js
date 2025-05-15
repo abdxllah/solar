@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/space-piano/', // <-- your GitHub repo name here, with slashes
+  base: 'https://github.com/abdxllah/solar', // <-- your GitHub repo name here, with slashes
 });
