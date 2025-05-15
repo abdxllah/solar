@@ -32,13 +32,13 @@ scene.add(directionalLight);
 
 const textureLoader = new THREE.TextureLoader();
 const planetTextures = {
-  Mercury: textureLoader.load('/solar/one.jpg'),
-  Venus: textureLoader.load('/solar/two.jpg'),
-  Earth: textureLoader.load('/solar/three.png'),
-  Mars: textureLoader.load('/solar/four.jpg'),
-  Jupiter: textureLoader.load('/solar/ive.jpg'),
-  Saturn: textureLoader.load('/solar/six.png'),
-  Uranus: textureLoader.load('/solar/seven.png')
+  Mercury: textureLoader.load('one.jpg'),
+  Venus: textureLoader.load('two.jpg'),
+  Earth: textureLoader.load('three.png'),
+  Mars: textureLoader.load('four.jpg'),
+  Jupiter: textureLoader.load('five.jpg'),
+  Saturn: textureLoader.load('six.png'),
+  Uranus: textureLoader.load('seven.png')
 };
 
 
@@ -91,7 +91,7 @@ planetData.forEach((data, i) => {
     case 'Earth': {
       const cloudGeo = new THREE.SphereGeometry(data.size * 1.01, 32, 32);
       const cloudMat = new THREE.MeshStandardMaterial({
-        map: textureLoader.load('/clouds.png'),
+        //map: textureLoader.load('/clouds.png'),
         transparent: true,
         opacity: 0.4,
         depthWrite: false
@@ -233,7 +233,7 @@ const starGeo = new THREE.BufferGeometry();
 starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 starGeo.setAttribute('color', new THREE.BufferAttribute(colorsStar, 3));
 
-const starTexture = new THREE.TextureLoader().load('/solar/circle.png');
+const starTexture = new THREE.TextureLoader().load('circle.png');
 
 const starMat = new THREE.PointsMaterial({
   size: 0.6,
@@ -263,7 +263,7 @@ closePopupBtn.onclick = () => {
 downloadCvBtn.onclick = () => {
   // Replace '/path/to/your-cv.pdf' with your actual CV pdf file URL/path
   const link = document.createElement('a');
-  link.href = '/ResumeAbdullahRafiq.pdf';  // <-- put your CV file URL here
+  link.href = 'ResumeAbdullahRafiq.pdf';  // <-- put your CV file URL here
   link.download = 'AbdullahRafiqCV.pdf';
   document.body.appendChild(link);
   link.click();
@@ -302,37 +302,37 @@ window.addEventListener('click', event => {
       case 'Mercury':
         title = 'Happy Bucket';
         description = 'At Happy Bucket, I took on the role of Director and Software Engineer, where I was deeply involved in designing and developing a mental health and well-being application aimed at genuinely helping users manage their mental health challenges. My focus was on creating unique and creative features that directly addressed real user needs, ensuring the platform offered meaningful support. I led a small development team, fostering clear and concise communication between members and collaborating closely with fellow directors to keep our shared vision aligned. This teamwork allowed the platform to continuously evolve and improve over time. Technically, I built the web application using PHP, HTML, CSS, and SQL, focusing on delivering an intuitive and accessible user experience. I prioritized creating a responsive and user-friendly website that made the app’s core functionality easy to use and accessible to a wide audience. Overall, my work at Happy Bucket combined technical development, team leadership, and user-centered design to create a platform that made a real difference in people’s mental health and well-being.';
-        imageUrl = '/solar/happybucket1.png';
+        imageUrl = 'happybucket1.png';
         break;
       case 'Venus':
         title = 'Warrior - An Exploration of AI in narrative-driven games';
         description = 'Venus: The hottest planet with thick clouds.';
-        imageUrl = '/solar/two.jpg';
+        imageUrl = 'two.jpg';
         break;
       case 'Earth':
         title = 'Predicting F10.7';
         description = 'Earth: Our home, rich with life.';
-        imageUrl = '/solar/f10.7.png';
+        imageUrl = 'f10.7.png';
         break;
       case 'Mars':
         title = 'ROTULUS: 3U CubSat Mission';
         description = 'Mars: The red planet with a mysterious past.';
-        imageUrl = '/solar/rotulus.png';
+        imageUrl = 'rotulus.png';
         break;
       case 'Jupiter':
         title = 'Rover Wheel Evaluation using Evolutionary Algorithms';
         description = 'Jupiter: The giant with a raging storm.';
-        imageUrl = '/solar/stein.png';
+        imageUrl = 'stein.png';
         break;
       case 'Saturn':
         title = 'Trajectory Data Converter';
         description = 'Saturn: Famous for its beautiful rings.';
-        imageUrl = '/solar/six.png';
+        imageUrl = 'six.png';
         break;
       case 'Uranus':
         title = 'Galax-C';
         description = 'Uranus: The icy blue planet that spins sideways.';
-        imageUrl = '/solar/seven.png';
+        imageUrl = 'seven.png';
         break;
     }
 
