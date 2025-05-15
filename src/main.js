@@ -299,7 +299,7 @@ window.addEventListener('click', event => {
     if (!object) return;
 
     let title = object.userData.name || 'The Sun';
-    let description = 'Click around to explore more!';
+    let description = 'I’m a space engineer, computer scientist, and musician driven by the desire to make a meaningful difference. My passion lies in using technology and creativity to improve lives, whether that’s through designing accessible tools for space missions, developing mental health platforms, or creating projects that support and uplift communities. With a foundation in both deep space systems and software engineering, I thrive at the intersection of logic and empathy, precision and imagination. Everything I build, whether it’s a predictive model for solar activity or a custom programming language for space engineers, is rooted in purpose: to help others, inspire change, and push boundaries.';
     let imageUrl = '';
     let showDownloadBtn = false;
 
@@ -316,32 +316,32 @@ window.addEventListener('click', event => {
         break;
       case 'Venus':
         title = 'Warrior - An Exploration of AI in narrative-driven games';
-        description = 'Venus: The hottest planet with thick clouds.';
+        description = 'In this project, I investigated how to push the boundaries of AI use in storytelling by creating a dynamic narrative experience fully determined by user interactions. Using C# and Python, I implemented a ‘bag of beats’ structure to craft an engaging and continuously evolving story that reacts to how the player behaves. This work allowed me to combine programming skills with creative storytelling, exploring new ways to deliver personalized and immersive gaming experiences.';
         imageUrl = 'two.jpg';
         break;
       case 'Earth':
         title = 'Predicting F10.7';
-        description = 'Earth: Our home, rich with life.';
+        description = 'Using Python and MATLAB, I developed a tool to predict F10.7 solar flux density, which helps forecast space weather and potential geomagnetic storms. By incorporating space weather knowledge, such as sunspot numbers and other flux densities, I improved the accuracy of the model. Additionally, I applied neural networks like LSTM to analyse time-series data, enabling more precise long-term solar activity predictions and enhancing the tool’s forecasting capabilities.';
         imageUrl = 'f10.7.png';
         break;
       case 'Mars':
         title = 'ROTULUS: 3U CubSat Mission';
-        description = 'Mars: The red planet with a mysterious past.';
+        description = 'As part of a team, I worked on a CubeSat mission focused on demonstrating the deployment of a novel 3U drag sail intended to accelerate the de-orbiting process from low Earth orbit. Serving as the deployment mechanism lead, I analyzed and developed design concepts across various technology readiness levels, utilizing software such as MATLAB and SOLIDWORKS. This experience deepened my knowledge of spacecraft design and gave me practical exposure to concurrent engineering principles and the Assembly, Integration, and Testing (AIT) process.';
         imageUrl = 'rotulus.png';
         break;
       case 'Jupiter':
         title = 'Rover Wheel Evaluation using Evolutionary Algorithms';
-        description = 'Jupiter: The giant with a raging storm.';
+        description = 'In this project, I explored innovative rover wheel designs using evolutionary algorithms to optimize wheel profiles for traversing varied terrains, including rocky surfaces. By combining Python, ZeroMQ, and CoppeliaSim, I tested different optimization techniques in both simulated and real-world environments. The project enhanced my understanding of planetary rover mobility and demonstrated how computational methods can be applied to improve hardware design for space exploration.';
         imageUrl = 'stein.png';
         break;
       case 'Saturn':
         title = 'Trajectory Data Converter';
-        description = 'Saturn: Famous for its beautiful rings.';
+        description = 'In this project, I developed tooling to streamline and automate the transformation of spacecraft ephemeris data into SPICE-compatible formats using C. By parsing trajectory data files files and programmatically generating setup files and SPK kernels, the system preserves flexibility in interpolation methods and frame references. The solution integrates time conversion, frame transformation, and state vector handling, enabling precise and adaptable trajectory generation for simulation or mission analysis workflows. This work allowed me to merge low-level systems programming with aerospace data standards, optimising pipeline efficiency for space mission support.';
         imageUrl = 'six.png';
         break;
       case 'Uranus':
         title = 'Galax-C';
-        description = 'Uranus: The icy blue planet that spins sideways.';
+        description = 'I am developing Galax-C, a programming language based on C that incorporates built-in functions tailored specifically for space engineering calculations. The language is designed with simple syntax to streamline complex operations, making it more accessible and efficient for space engineers. This project reflects my drive to create practical tools that enable professionals in the space industry to prototype and test concepts quickly without relying on proprietary software or complicated mathematical tools.';
         imageUrl = 'seven.png';
         break;
     }
