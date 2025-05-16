@@ -541,7 +541,7 @@ function animate() {
 
 document.getElementById('question-mark-circle').addEventListener('click', () => {
   popup.querySelector('h2').innerText = 'Welcome Traveller!';
-  popup.querySelector('p').innerText = 'My name is Abdullah and welcome to my small personal Solar System I made using Three.js to show off some of my personal projects. Drag to look around using the mouse and click on the the star in the centre to learn about me or the planets to see my projects!\n \n WARNING - This is not a replica of our Solar System and breaks many laws of physics!';
+  popup.querySelector('p').innerText = 'My name is Abdullah, and welcome to my small personal Solar System I made using Three.js to show off some of my personal projects. Drag to look around using the mouse and click on the star in the centre to learn about me, or the planets to see my projects!\n \n WARNING - This is not a replica of our Solar System and breaks many laws of physics!';
   popupImage.style.display = 'none'; 
   popupImage2.style.display = 'none';     
   downloadCvBtn.style.display = 'none';  
@@ -550,8 +550,8 @@ document.getElementById('question-mark-circle').addEventListener('click', () => 
 
 
 popup.querySelector('h2').innerText = 'Welcome Traveller!';
-  popup.querySelector('p').innerText = 'My name is Abdullah and welcome to my small personal Solar System I made using Three.js to show off some of my personal projects. Drag to look around using the mouse and click on the the star in the centre to learn about me or the planets to see my projects! \n \nWARNING - This is not a replica of our Solar System and breaks many laws of physics!';
-  popup.style.display = 'block';
+popup.querySelector('p').innerText = 'My name is Abdullah, and welcome to my small personal Solar System I made using Three.js to show off some of my personal projects. Drag to look around using the mouse and click on the star in the centre to learn about me, or the planets to see my projects!\n \n WARNING - This is not a replica of our Solar System and breaks many laws of physics!';
+popup.style.display = 'block';
 
 animate();
 
