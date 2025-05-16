@@ -263,9 +263,12 @@ const popupImage = document.getElementById('popup-image');
 const popupImage2 = document.getElementById('popup-image2');
 const downloadCvBtn = document.getElementById('download-cv-btn');
 const closePopupBtn = document.getElementById('close-popup-btn');
+let popupOpen = false;
+
 
 closePopupBtn.onclick = () => {
   popup.style.display = 'none';
+  popupOpen = false;
 };
 
 downloadCvBtn.onclick = () => {
@@ -278,6 +281,7 @@ downloadCvBtn.onclick = () => {
 };
 
 window.addEventListener('click', event => {
+  if (popupOpen) return;
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
@@ -374,10 +378,12 @@ window.addEventListener('click', event => {
     }
 
     popup.style.display = 'block';
+    popupOpen = true;
   }
 });
 
 window.addEventListener('touchend', event => {
+  if (popupOpen) return;
   const touch = event.changedTouches[0];
 
   mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
@@ -411,7 +417,7 @@ window.addEventListener('touchend', event => {
         break;
       case 'Mercury':
         title = 'Happy Bucket';
-        description = 'At Happy Bucket, I took on the role of Director and Software Engineer, where I was deeply involved in designing and developing a mental health and well-being application aimed at genuinely helping users manage their mental health challenges. The idea came up around the time that me and my friends were doing our A-levels and was rooted around the struggles that we ourselves were facing and seeing our peers face. My focus was on creating unique and creative features that directly addressed real user needs, ensuring the platform offered meaningful support. Some of these included a timer for when users were experiencing moments of anxiety to help calm them until it passed, as well as a feature called Send Me Into Orbit that allowed users to recieve anonymous messages of support from other users. \n \n I helped lead a small development team, fostering clear and concise communication between members and collaborating closely with fellow directors to keep our shared vision aligned. This teamwork allowed the platform to continuously evolve and improve over time. Happy Bucket was built using PHP, HTML, CSS, and SQL, focusing on delivering an intuitive and accessible user experience. The priority for us was creating a responsive and user-friendly website that made the app’s core functionality easy to use and accessible to a wide audience. My work at Happy Bucket was the first real exposure I had to both software development and business in general. It combined technical development, team leadership, and user-centered design to try to create a platform that made a real difference in people’s mental health and well-being. I learned not just how to code a Full Stack Application, but also more about Agile techniques and software engineering as a whole. I also learnt more about the design side of coding, as well as the stuff in a platform that goes beyond development, like marketing and research.\n\n';
+        description = 'At Happy Bucket, I took on the role of Director and Software Engineer, where I was deeply involved in designing and developing a mental health and well-being application aimed at genuinely helping users manage their mental health challenges. The idea came up around the time that me and my friends were doing our A-levels and was rooted around the struggles that we ourselves were facing and seeing our peers face. My focus was on creating unique and creative features that directly addressed real user needs, ensuring the platform offered meaningful support. Some of these included a timer for when users were experiencing moments of anxiety to help calm them until it passed, as well as a feature called Send Me Into Orbit that allowed users to recieve anonymous messages of support from other users. \n \n I helped lead a small development team, fostering clear and concise communication between members and collaborating closely with fellow directors to keep our shared vision aligned. This teamwork allowed the platform to continuously evolve and improve over time. Happy Bucket was built using PHP, HTML, CSS, and SQL, focusing on delivering an intuitive and accessible user experience. The priority for us was creating a responsive and user-friendly website that made the app’s core functionality easy to use and accessible to a wide audience. My work at Happy Bucket was the first real exposure I had to both software development and business in general. It combined technical development, team leadership, and user-centered design to try to create a platform that made a real difference in people’s mental health and well-being. I learned not just how to code a Full Stack Application, but also more about Agile techniques and software engineering as a whole. I also learnt more about the design side of coding, as well as the stuff in a platform that goes beyond development, like marketing and research.';
         imageUrl = 'happybucket1.png';
         imageUrl2 = 'happybucket2.png';
         popupImage2.src = imageUrl2;
@@ -476,6 +482,8 @@ window.addEventListener('touchend', event => {
     }
 
     popup.style.display = 'block';
+    popupOpen = true;
+
   }
 });
 
@@ -485,6 +493,7 @@ document.addEventListener('keydown', (event) => {
     const popup = document.getElementById('info-popup');
     if (popup && popup.style.display === 'block') {
       popup.style.display = 'none';
+      popupOpen = false;
     }
   }
 });
@@ -546,12 +555,14 @@ document.getElementById('question-mark-circle').addEventListener('click', () => 
   popupImage2.style.display = 'none';     
   downloadCvBtn.style.display = 'none';  
   popup.style.display = 'block';
+  popupOpen = true;
 });
 
 
 popup.querySelector('h2').innerText = 'Welcome Traveller!';
 popup.querySelector('p').innerText = 'My name is Abdullah, and welcome to my small personal Solar System I made using Three.js to show off some of my personal projects. Drag to look around using the mouse and click on the star in the centre to learn about me, or the planets to see my projects!\n \n WARNING - This is not a replica of our Solar System and breaks many laws of physics!';
 popup.style.display = 'block';
+popupOpen = true;
 
 animate();
 
