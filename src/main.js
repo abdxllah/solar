@@ -64,13 +64,13 @@ sunLight.position.copy(sun.position);
 scene.add(sunLight);
 
 const planetData = [
-  { size: 2, distance: 24, speed: 0.005, rotationSpeed: 0.01, name: 'Mercury', glowColor: 0xff00aa },
-  { size: 2.5, distance: 30, speed: 0.004, rotationSpeed: 0.008, name: 'Venus', glowColor: 0xffc0cb },
-  { size: 3, distance: 38, speed: 0.0035, rotationSpeed: 0.02, name: 'Earth', glowColor: 0xff5500 },
-  { size: 2.5, distance: 46, speed: 0.003, rotationSpeed: 0.017, name: 'Mars', glowColor: 0x00ff00 },
-  { size: 3.5, distance: 56, speed: 0.002, rotationSpeed: 0.015, name: 'Jupiter', glowColor: 0x0099ff },
-  { size: 3, distance: 66, speed: 0.0015, rotationSpeed: 0.013, name: 'Saturn', glowColor: 0xfff5cc },
-  { size: 2.5, distance: 76, speed: 0.001, rotationSpeed: 0.011, name: 'Uranus', glowColor: 0x665533 }
+  { size: 2, distance: 24, speed: 0.0025, rotationSpeed: 0.01, name: 'Mercury', glowColor: 0xff00aa },
+  { size: 2.5, distance: 30, speed: 0.002, rotationSpeed: 0.008, name: 'Venus', glowColor: 0xffc0cb },
+  { size: 3, distance: 38, speed: 0.00175, rotationSpeed: 0.02, name: 'Earth', glowColor: 0xff5500 },
+  { size: 2.5, distance: 46, speed: 0.0015, rotationSpeed: 0.017, name: 'Mars', glowColor: 0x00ff00 },
+  { size: 3.5, distance: 56, speed: 0.001, rotationSpeed: 0.015, name: 'Jupiter', glowColor: 0x0099ff },
+  { size: 3, distance: 66, speed: 0.00075, rotationSpeed: 0.013, name: 'Saturn', glowColor: 0xfff5cc },
+  { size: 2.5, distance: 76, speed: 0.0005, rotationSpeed: 0.011, name: 'Uranus', glowColor: 0x665533 }
 ];
 
 const planets = [];
@@ -542,7 +542,8 @@ function animate() {
 document.getElementById('question-mark-circle').addEventListener('click', () => {
   popup.querySelector('h2').innerText = 'Welcome Traveller!';
   popup.querySelector('p').innerText = 'My name is Abdullah and welcome to my small personal Solar System I made using Three.js to show off some of my personal projects. Drag to look around using the mouse and click on the the star in the centre to learn about me or the planets to see my projects!\n \n WARNING - This is not a replica of our Solar System and breaks many laws of physics!';
-  popupImage.style.display = 'none';      
+  popupImage.style.display = 'none'; 
+  popupImage2.style.display = 'none';     
   downloadCvBtn.style.display = 'none';  
   popup.style.display = 'block';
 });
