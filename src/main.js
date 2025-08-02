@@ -268,6 +268,14 @@ let popupOpen = false;
 
 closePopupBtn.onclick = () => {
   popup.style.display = 'none';
+  popup.scrollTop = 0; // reset scroll
+  popup.querySelector('h2').innerText = '';
+  popup.querySelector('p').innerText = '';
+  popupImage.src = '';
+  popupImage2.src = '';
+  popupImage.style.display = 'none';
+  popupImage2.style.display = 'none';
+  downloadCvBtn.style.display = 'none';
   popupOpen = false;
 };
 
@@ -364,7 +372,7 @@ window.addEventListener('click', event => {
         //popupImage2.style.display = 'block';
         break;
     }
-
+    
     popup.querySelector('h2').innerText = title;
     popup.querySelector('p').innerText = description;
 
