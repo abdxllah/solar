@@ -379,7 +379,6 @@ window.addEventListener('click', event => {
 
     popup.style.display = 'block';
     popup.scrollTop = 0;
-    popup.scrollTop = 0;
     popupOpen = true;
   }
 });
